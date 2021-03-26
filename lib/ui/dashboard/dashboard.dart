@@ -925,7 +925,7 @@ class _DashboardState extends State<Dashboard> {
                                                                 Text(
                                                                   showEvents[
                                                                           index]
-                                                                      .category,
+                                                                      .tag,
                                                                   style: TextStyle(
                                                                       fontSize:
                                                                           10),
@@ -1458,8 +1458,7 @@ class _BottomSlideState extends State<BottomSlide> {
                                                   ),
                                                   SizedBox(height: 6),
                                                   Text(
-                                                    bottomSlideList[index]
-                                                        .category,
+                                                    bottomSlideList[index].tag,
                                                     style:
                                                         TextStyle(fontSize: 10),
                                                   ),
