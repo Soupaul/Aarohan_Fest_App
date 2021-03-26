@@ -311,19 +311,17 @@ class _ContactUsState extends State<ContactUs> {
                             ),
                           ),
                         ),
-                        Expanded(
-                          child: Container(
-                            height: 75,
-                            // color: Colors.black,
-                            // padding: EdgeInsets.fromLTRB(50.0, 10.0, 30.0, 0.0),
-                            child: Center(
-                              child: Text(
-                                "Contact Us",
-                                style: GoogleFonts.josefinSans(
-                                    fontSize: 26,
-                                    color: Colors.white //(0xFF6B872B),
-                                    ),
-                              ),
+                        Container(
+                          height: 75,
+                          // color: Colors.black,
+                          // padding: EdgeInsets.fromLTRB(50.0, 10.0, 30.0, 0.0),
+                          child: Center(
+                            child: Text(
+                              "Contact Us",
+                              style: GoogleFonts.josefinSans(
+                                  fontSize: 26,
+                                  color: Colors.white //(0xFF6B872B),
+                                  ),
                             ),
                           ),
                         ),
