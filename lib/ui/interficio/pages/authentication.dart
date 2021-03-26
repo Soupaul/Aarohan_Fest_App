@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -28,10 +29,20 @@ class _AuthPageState extends State<AuthPage> {
     }
   }
 
+  FirebaseDatabase database = FirebaseDatabase.instance;
+  DatabaseReference ref;
+  String backgroundImg;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    ref = database.reference();
+    ref.child("jd_poster").once().then((DataSnapshot snapshot) {
+      print(snapshot.value);
+      setState(() {
+        backgroundImg = snapshot.value;
+      });
+    });
   }
 
   final Map<String, dynamic> _loginFormData = {
@@ -48,7 +59,7 @@ class _AuthPageState extends State<AuthPage> {
 
   bool _isLoading = false;
 
-  String api_url = "jd.weblikate.com";
+  String api_url = "interficio.nitdgplug.org";
 
   AuthMode _authmode = AuthMode.login;
 
@@ -315,7 +326,9 @@ class _AuthPageState extends State<AuthPage> {
   DecorationImage _buildBackgroundImage() {
     return DecorationImage(
       fit: BoxFit.cover,
-      image: AssetImage('assets/JournoDetective.jpg'),
+      image: backgroundImg == null
+          ? AssetImage('assets/JournoDetective.jpg')
+          : NetworkImage(backgroundImg),
     );
   }
 

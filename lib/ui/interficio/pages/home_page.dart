@@ -19,7 +19,7 @@ class HomePage extends StatefulWidget {
 
 Completer<GoogleMapController> mapController = Completer();
 
-String api_url = "jd.weblikate.com";
+String api_url = "interficio.nitdgplug.org";
 
 bool header = false;
 bool intro = false;
