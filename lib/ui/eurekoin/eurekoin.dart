@@ -724,45 +724,103 @@ class EurekoinHomePageState extends State<EurekoinHomePage> {
       context: context,
       builder: (context) => Center(
         child: SizedBox(
-          height: 370,
+          height: 250,
           child: Dialog(
-            backgroundColor:
-                message == "Successful!" ? Colors.green : Colors.red,
+            backgroundColor: Color(0xFF292D32),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20.0))),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: <Widget>[
-                  Text("QR Code Result"),
-                  Text(
-                    message,
-                    style: label,
-                  ),
-                  Divider(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "DATE",
-                        style: label,
+            child: Neumorphic(
+              style: NeumorphicStyle(
+                shape: NeumorphicShape.flat,
+                boxShape: NeumorphicBoxShape.roundRect(
+                  BorderRadius.circular(20.0),
+                ),
+                depth: 8.0,
+                intensity: 1.0,
+                lightSource: LightSource.top,
+                shadowLightColor: Colors.grey[700].withOpacity(0.55),
+                shadowDarkColor: Colors.black,
+              ),
+              child: Container(
+                color: Color(0xFF292D32),
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: <Widget>[
+                    Neumorphic(
+                      style: NeumorphicStyle(
+                        shape: NeumorphicShape.flat,
+                        boxShape: NeumorphicBoxShape.roundRect(
+                          BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                          ),
+                        ),
+                        depth: 8.0,
+                        intensity: 1.0,
+                        lightSource: LightSource.top,
+                        shadowLightColor: Colors.grey[700].withOpacity(0.55),
+                        shadowDarkColor: Colors.black,
                       ),
-                      Text("TIME", style: label)
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[Text(date), Text(time)],
-                  ),
-                  SizedBox(height: 20.0),
-                  SizedBox(height: 20.0),
-                  FlatButton(
-                    child: new Text("Close"),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ],
+                      child: Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: message == "Successful!"
+                              ? Colors.green
+                              : Colors.red,
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(20),
+                          ),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          message,
+                          style: label,
+                        ),
+                      ),
+                    ),
+                    Divider(),
+                    Neumorphic(
+                      margin: EdgeInsets.only(top: 10.0),
+                      style: NeumorphicStyle(
+                        shape: NeumorphicShape.flat,
+                        boxShape: NeumorphicBoxShape.roundRect(
+                          BorderRadius.circular(12.0),
+                        ),
+                        depth: 8.0,
+                        intensity: 1.0,
+                        lightSource: LightSource.top,
+                        shadowLightColor: Colors.grey[700].withOpacity(0.55),
+                        shadowDarkColor: Colors.black,
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10.0, vertical: 15.0),
+                        decoration: BoxDecoration(
+                          color: Color(0xFF292D32),
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                                  "DATE",
+                                  style: label,
+                                ),
+                                Text("TIME", style: label)
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[Text(date), Text(time)],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.0),
+                  ],
+                ),
               ),
             ),
           ),

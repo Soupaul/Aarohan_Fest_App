@@ -432,9 +432,7 @@ class _ScoreboardState extends State<Scoreboard> {
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: Theme.of(context).brightness == Brightness.light
-                      ? AssetImage("images/gifs/loaderlight.gif")
-                      : AssetImage("images/gifs/loaderdark.gif"),
+                  image: AssetImage("images/gifs/X1D_lossy.gif"),
                   fit: BoxFit.fill)),
         ),
       );
