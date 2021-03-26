@@ -130,7 +130,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 ListTile(
                   title: Text(
                     'Utilities',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                   ),
                 ),
                 getListItem("Dashboard", "/ui/dashboard"),
@@ -147,11 +147,11 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 ListTile(
                   title: Text(
                     'Attractions',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                   ),
                 ),
-                getListItem("Prelims", "/ui/prelims"),
                 getListItem("Game", "/ui/arcade_game"),
+                getListItem("Prelims", "/ui/prelims"),
                 getListItem("Journo Detective", "ui/interficio"),
                 Divider(
                   color: Colors.white,
@@ -162,7 +162,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 ListTile(
                   title: Text(
                     'Team Aavishkar',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                   ),
                 ),
                 getListItem("Sponsors", "/ui/sponsors/sponsors"),
