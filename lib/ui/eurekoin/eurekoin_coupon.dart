@@ -226,7 +226,10 @@ class _EurekoinCouponState extends State<EurekoinCoupon> {
                     child: _isLoading
                         ? SizedBox(
                             height: 2,
-                            child: LinearProgressIndicator(),
+                            child: LinearProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                  Color(0xFF03A062)),
+                            ),
                           )
                         : Container(
                             padding:

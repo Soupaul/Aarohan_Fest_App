@@ -445,7 +445,10 @@ Widget PaymentSuccessDialog(context, message, amount, to) {
               padding: const EdgeInsets.all(16.0),
               child: _isLoading
                   ? Container(
-                      child: LinearProgressIndicator(),
+                      child: LinearProgressIndicator(
+                        valueColor:
+                            AlwaysStoppedAnimation<Color>(Color(0xFF03A062)),
+                      ),
                     )
                   : Column(
                       children: <Widget>[

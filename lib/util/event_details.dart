@@ -278,12 +278,7 @@ class EventDetailsState extends State<EventDetails> {
                                   new DetailItem(
                                     tooltip: 'Open Link',
                                     onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => new WebRender(
-                                                link: widget.item.link)),
-                                      );
+                                      _launchURL(widget.item.link);
                                     },
                                     lines: <String>[
                                       "${widget.item.link}",
@@ -320,5 +315,13 @@ class EventDetailsState extends State<EventDetails> {
         )),
       ),
     );
+  }
+
+  _launchURL(String str) async {
+    if (await canLaunch(str)) {
+      await launch(str);
+    } else {
+      throw 'Could not launch $str';
+    }
   }
 }

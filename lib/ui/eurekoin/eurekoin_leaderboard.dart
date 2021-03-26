@@ -88,7 +88,14 @@ class EurekoinLeader extends State<EurekoinLeaderBoard> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: _isLoading
-              ? Container()
+              ? Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage('images/gifs/X1D_lossy.gif'),
+                  )),
+                )
               : CustomScrollView(slivers: [
                   SliverToBoxAdapter(
                       child: Stack(
@@ -216,7 +223,9 @@ class EurekoinLeader extends State<EurekoinLeaderBoard> {
             // margin: EdgeInsets.only(top: 100),
             child: Center(
               child: Text(
-                name.substring(0, name.indexOf(" ")),
+                (name.indexOf(" ") == -1)
+                    ? name
+                    : name.substring(0, name.indexOf(" ")),
                 style: TextStyle(color: Colors.white),
               ),
             ),

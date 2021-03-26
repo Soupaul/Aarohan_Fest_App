@@ -225,7 +225,7 @@ class EurekoinHomePageState extends State<EurekoinHomePage> {
                                               ))),
                                       Container(
                                         child: RaisedButton(
-                                          color: Color(0xFF00f6ff),
+                                          color: Color(0xFF03A062),
                                           onPressed: () {
                                             registerEurekoinUser(
                                                 referalCode.text);
@@ -238,7 +238,7 @@ class EurekoinHomePageState extends State<EurekoinHomePage> {
                                   )
                                 : Container(
                                     child: RaisedButton(
-                                        color: Color(0xFF00f6ff),
+                                        color: Color(0xFF03A062),
                                         onPressed: () {
                                           registerEurekoinUser('');
                                         },
@@ -249,7 +249,7 @@ class EurekoinHomePageState extends State<EurekoinHomePage> {
                             ? Container(
                                 padding:
                                     EdgeInsets.fromLTRB(0.0, 0.0, 5.0, 5.0),
-                                alignment: Alignment.bottomRight,
+                                alignment: Alignment.bottomCenter,
                                 child: GestureDetector(
                                     onTap: () {
                                       setState(() {
@@ -495,7 +495,7 @@ class EurekoinHomePageState extends State<EurekoinHomePage> {
                                               valueColor:
                                                   new AlwaysStoppedAnimation<
                                                           Color>(
-                                                      Color(0xFF505194)))),
+                                                      Color(0xFF03A062)))),
                                     ]))
                             ],
                           ),

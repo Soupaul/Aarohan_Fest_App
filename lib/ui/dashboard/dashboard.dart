@@ -920,6 +920,16 @@ class _DashboardState extends State<Dashboard> {
                                                                     )
                                                                   ],
                                                                 ),
+                                                                SizedBox(
+                                                                    height: 6),
+                                                                Text(
+                                                                  showEvents[
+                                                                          index]
+                                                                      .category,
+                                                                  style: TextStyle(
+                                                                      fontSize:
+                                                                          10),
+                                                                ),
                                                               ],
                                                             ),
                                                           ),
@@ -1167,9 +1177,17 @@ class BottomSlide extends StatefulWidget {
   _BottomSlideState createState() => _BottomSlideState();
 }
 
-List<EventItem> bottomSlideList = events;
+List<EventItem> bottomSlideList = [];
 
 class _BottomSlideState extends State<BottomSlide> {
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      bottomSlideList = events;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final List<Widget> choiceChips = tags.map<Widget>((String name) {
@@ -1186,6 +1204,7 @@ class _BottomSlideState extends State<BottomSlide> {
         selectedColor: chipColor.withOpacity(0.3),
         onSelected: (bool value) {
           setState(() {
+            bottomSlideList = [];
             _selectedTag = value ? name : _selectedTag;
             bottomSlideList = events
                 .where((element) =>
@@ -1436,6 +1455,13 @@ class _BottomSlideState extends State<BottomSlide> {
                                                             fontSize: 10),
                                                       )
                                                     ],
+                                                  ),
+                                                  SizedBox(height: 6),
+                                                  Text(
+                                                    bottomSlideList[index]
+                                                        .category,
+                                                    style:
+                                                        TextStyle(fontSize: 10),
                                                   ),
                                                 ],
                                               ),
